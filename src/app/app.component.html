@@ -5,5 +5,20 @@
   <input [appIFocus]="'focus'"  type="text" class="form-control" >
   <input [(ngModel)]="dataFocus" type="text" class="form-control">
   <button (click)="funcSendBtn()" class="btn btn-danger">Send</button>
+
+  <hr/>
+  <div *ngIf="newsArr != null " class="row">
+    <div *ngFor="let item of newsArr" class="col-sm-4">
+      <div class="card">
+        <img src={{item.urlToImage}} class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">{{item.title}}</h5>
+          <p class="card-text">{{item.content}}</p>
+          <a href="#" class="btn btn-primary">More</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <router-outlet></router-outlet>
 </div>

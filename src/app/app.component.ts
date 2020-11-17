@@ -1,13 +1,13 @@
-import {Component} from '@angular/core';
-import {HttpClient} from '@angular/common/http';
+import {Component, OnInit} from '@angular/core';
 import {Article, GoogleNews} from '../model/GoogleNews';
+import {Util} from '../util/Util';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   newsArr: Article[];
   title = 'twodays';
   greenColor = 'green';
@@ -15,15 +15,19 @@ export class AppComponent {
   focusStatus = '';
   dataFocus = '';
 
-  constructor(private http: HttpClient) {
+  constructor(private util: Util) {
+  }
+
+  ngOnInit(): void {
+
   }
 
   funcSendBtn(): void {
-    const url = 'http://newsapi.org/v2/top-headlines?sources=google-news-in&apiKey=0daa40ca50444db4884a60637002c6fc';
-    this.http.get(url).subscribe(item => {
+    this.util.fncNewsService().subscribe(item => {
       const gNew: GoogleNews | any = item;
       this.newsArr = gNew.articles;
       console.log(this.newsArr);
     });
   }
+
 }
