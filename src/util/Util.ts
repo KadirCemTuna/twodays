@@ -15,7 +15,6 @@ export class Util {
   url = 'http://newsapi.org/v2/top-headlines';
 
   fncNewsService() {
-    const data = this.params;
     return this.http.get(this.url, {params: this.params});
   }
 }

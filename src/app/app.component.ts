@@ -12,6 +12,7 @@ export class AppComponent implements OnInit {
   title = 'twodays';
   greenColor = 'green';
   redColor = 'red';
+  yellowColor = 'yellow';
   focusStatus = '';
   dataFocus = '';
 
