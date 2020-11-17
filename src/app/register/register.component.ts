@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {FormGroup} from '@angular/forms';
 import {Util} from '../../util/Util';
+import {RegisterData} from '../../model/RegisterData';
 
 @Component({
   selector: 'app-register',
@@ -22,15 +23,25 @@ export class RegisterComponent implements OnInit {
   }
 
   fncUserRegister(): void {
-    const params = {
-      userName: this.userName,
-      userSurname: this.userSurname,
-      userPhone: this.userPhone,
-      userMail: this.userMail,
-      userPass: this.userPassword
-    };
-    this.util.userRegister(params).subscribe(resp => {
-      console.log(JSON.stringify(resp));
-    });
+    if (this.userName === '' || this.userPassword === '') {
+      alert('wrong Inputs!');
+    } else {
+
+      const params = {
+        userName: this.userName,
+        userSurname: this.userSurname,
+        userPhone: this.userPhone,
+        userMail: this.userMail,
+        userPass: this.userPassword
+      };
+      this.util.userRegister(params).subscribe(resp => {
+        const dt: RegisterData | any = resp;
+        if (dt.user[0].durum) {
+          console.log(JSON.stringify(dt));
+        } else {
+          alert('Register Failed!');
+        }
+      });
+    }
   }
 }
