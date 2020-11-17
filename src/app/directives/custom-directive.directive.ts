@@ -1,10 +1,16 @@
-import { Directive } from '@angular/core';
+import {Directive, ElementRef, Input, OnInit} from '@angular/core';
 
 @Directive({
-  selector: '[appCustomDirective]'
+  selector: '[appColorsDirective]'
 })
-export class CustomDirectiveDirective {
+export class CustomDirectiveDirective implements OnInit{
 
-  constructor() { }
+  @Input() appColorsDirective: string;
+
+  constructor(private ref: ElementRef ) { }
+
+  ngOnInit(): void {
+    this.ref.nativeElement.style.backgroundColor = this.appColorsDirective;
+  }
 
 }
