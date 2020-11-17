@@ -1,1 +1,7 @@
-<p>register works!</p>
+<form [formGroup]="frmRegister" (ngSubmit)="fncUserRegister(frmRegister.value)">
+  <input formControlName="userName" type="text" placeholder="userName" class="form-control">
+  <input formControlName="userSurname" type="text" placeholder="userSurname" class="form-control">
+  <input formControlName="userPhone" type="text" placeholder="userPhone" class="form-control">
+  <input formControlName="userMail" type="email" placeholder="userMail" class="form-control">
+  <input formControlName="userPassword" type="password" placeholder="userPassword" class="form-control">
+</form>
