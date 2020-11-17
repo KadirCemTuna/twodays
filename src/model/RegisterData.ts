@@ -1,0 +1,9 @@
+export interface RegisterData {
+  user: User[];
+}
+
+export interface User {
+  durum: boolean;
+  mesaj: string;
+  kullaniciId: string;
+}

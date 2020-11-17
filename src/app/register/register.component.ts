@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {FormGroup} from '@angular/forms';
+import {Util} from '../../util/Util';
 
 @Component({
   selector: 'app-register',
@@ -14,13 +15,22 @@ export class RegisterComponent implements OnInit {
   userMail = '';
   userPassword = '';
 
-  constructor() {
+  constructor(private util: Util) {
   }
 
   ngOnInit(): void {
   }
 
-  fncUserRegister(data: any): void{
-
+  fncUserRegister(): void {
+    const params = {
+      userName: this.userName,
+      userSurname: this.userSurname,
+      userPhone: this.userPhone,
+      userMail: this.userMail,
+      userPass: this.userPassword
+    };
+    this.util.userRegister(params).subscribe(resp => {
+      console.log(JSON.stringify(resp));
+    });
   }
 }

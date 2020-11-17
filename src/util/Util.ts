@@ -5,6 +5,8 @@ import {Injectable} from '@angular/core';
   providedIn: 'root'
 })
 export class Util {
+  ref = '5380f5dbcc3b1021f93ab24c3a1aac24';
+
   constructor(private http: HttpClient) {
   }
 
@@ -21,5 +23,11 @@ export class Util {
   getProduct() {
     const url = 'http://jsonbulut.com/json/product.php?ref=5380f5dbcc3b1021f93ab24c3a1aac24&start=0';
     return this.http.get(url);
+  }
+
+  userRegister(params: any) {
+    params.ref = this.ref;
+    const url = 'http://jsonbulut.com/json/userRegister.php';
+    return this.http.get(url, {params});
   }
 }
