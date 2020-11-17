@@ -1,4 +1,8 @@
 <div class="container">
   <h1>Welcome App</h1>
+  <h4 [appColorsDirective]="redColor">Customer Directive - 1</h4>
+  <h4 [appColorsDirective]="greenColor">Customer Directive - 2</h4>
+  <input type="text" class="form-control" >
+  <button (click)="funcSendBtn()" class="btn btn-danger">Send</button>
   <router-outlet></router-outlet>
 </div>
