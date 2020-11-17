@@ -10,6 +10,7 @@ export class CustomDirectiveDirective implements OnInit{
   constructor(private ref: ElementRef ) { }
 
   ngOnInit(): void {
+    console.log('colors: ' + this.appColorsDirective);
     this.ref.nativeElement.style.backgroundColor = this.appColorsDirective;
   }
 

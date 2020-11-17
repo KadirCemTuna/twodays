@@ -5,11 +5,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CustomDirectiveDirective } from './directives/custom-directive.directive';
 import {FormsModule} from '@angular/forms';
+import { IFocusDirective } from './directives/i-focus.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CustomDirectiveDirective
+    CustomDirectiveDirective,
+    IFocusDirective
   ],
   imports: [
     BrowserModule,
