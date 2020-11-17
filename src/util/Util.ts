@@ -17,4 +17,9 @@ export class Util {
   fncNewsService() {
     return this.http.get(this.url, {params: this.params});
   }
+
+  getProduct() {
+    const url = 'http://jsonbulut.com/json/product.php?ref=5380f5dbcc3b1021f93ab24c3a1aac24&start=0';
+    return this.http.get(url);
+  }
 }

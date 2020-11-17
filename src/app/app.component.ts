@@ -29,6 +29,11 @@ export class AppComponent implements OnInit {
       this.newsArr = gNew.articles;
       console.log(this.newsArr);
     });
+
+    this.util.getProduct()
+      .subscribe((resp: any) => {
+        console.log(resp);
+      });
   }
 
 }

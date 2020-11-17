@@ -7,12 +7,14 @@ import { AppComponent } from './app.component';
 import { CustomDirectiveDirective } from './directives/custom-directive.directive';
 import {FormsModule} from '@angular/forms';
 import { IFocusDirective } from './directives/i-focus.directive';
+import { RegisterComponent } from './register/register.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CustomDirectiveDirective,
-    IFocusDirective
+    IFocusDirective,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
