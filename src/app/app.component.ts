@@ -9,9 +9,10 @@ export class AppComponent {
   title = 'twodays';
   greenColor = 'green';
   redColor = 'red';
+  focusStatus = '';
+  dataFocus = '';
 
 
 funcSendBtn(): void{
-
 }
 }
